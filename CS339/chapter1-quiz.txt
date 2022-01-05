@@ -1,0 +1,63 @@
+True-and-False
+
+1-Lower layers can change implementation without affecting upper layers as long as the interface between layers remains the same.
+
+2-The capacity of a channel is only constrained by its physical bandwidth.
+
+3-LAN and WAN only differs in the network scale.
+
+4-Computer Network is collection of autonomous computers interconnected by a single technology where single technology means protocol layering.
+
+5-A protocol is always implemented in software.
+
+6-Given a 3kHz telephone line with signal-to-noise ratio of 30 dB, the maximum capacity is approximately 30kbps.
+
+7-The end-to-end delay of 10 pipelining packets equals sum of the end-to-end delay of each packet.
+
+8-Layers four and five of the Internet protocol stack are implemented in the end systems but not in the routers in the network core.
+
+9-Protocol layering gains a lot and loses nothing.
+
+10-TDM is suitable for Circuit switching, whereas ATDM is for packet switching (with packet scheduling in router input/output port queuing)
+
+Answer
+1-Lower layers can change implementation without affecting upper layers as long as the interface between layers remains the same.
+True
+Network protocol layer has some advantages: the first is being easy to design, the second is each layer is independent, the third is flexible. Meaning that one layer can change implementation without affecting upper layers as long as the interface stays the same.
+
+2-The capacity of a channel is only constrained by its physical bandwidth.
+False
+According to Shannon's therem, the capacity is also influenced by the signal-to-noise rate.
+
+3-LAN and WAN only differs in the network scale.
+False
+For LAN, it uses broadcast and simple topologies, while for WAN, it uses a structure of network edge to network core to network edge, in which point-to-point connection is used.
+
+
+4-Computer Network is collection of autonomous computers interconnected by a single technology where single technology means protocol layering.
+False
+The single technology is not protocol layering in computer network definition. Communication technology link different autonomous computers together.
+
+5-A protocol is always implemented in software.
+False
+A protocol is not always implemented in software, for example as physical layer protocol, which is implemented in hardware.
+
+6-Given a 3kHz telephone line with signal-to-noise ratio of 30 dB, the maximum capacity is approximately 30kbps.
+True
+Have to transform 30 dB to signal-to-noise, then use Shannon's therem.
+
+7-The end-to-end delay of 10 pipelining packets equals sum of the end-to-end delay of each packet.
+False
+For pipelining packet switch, the end-to-end delay is the first packet's whole delay plus others' transmission delay.
+
+8-Layers four and five of the Internet protocol stack are implemented in the end systems but not in the routers in the network core.
+True
+The layer four and five is application layer and transport layer, which are implemented in the end systems.
+
+9-Protocol layering gains a lot and loses nothing.
+False
+Protocal layer's benefits and lacks. For lack, the efficiency of communication is relatively reduced.
+
+10-TDM is suitable for Circuit switching, whereas ATDM is for packet switching (with packet scheduling in router input/output port queuing)
+True
+ATDM means allocating slots to users only when users need to transfer data.
