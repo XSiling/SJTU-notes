@@ -1,0 +1,51 @@
+1- Suppose that the last SampleRTT in a TCP connection is equal to 1 sec. Then Timeout for the connection will necessarily be set to a value >= 1 sec.
+
+2- Except for packet loss, network congestion can also cause the timer time-out.
+
+3- The timer is used to detect packet loss. Duplicate acks can be caused by setting the timer too long.
+
+4- Sequence number space is the bigger the better.
+
+5- Suppose that host A wants to send data over TCP to host B, and host B wants to send data to host A over TCP. Two separate TCP connections - one for each direction - are needed.
+
+6- TCP will crowd out UDP when congestion occurs.
+
+7- Fair sharing network bandwidth reduces average TCP flow completion time.
+
+8- Using sequence numbers can help handle duplicated acks in rdt2.1.
+
+9- Rdt2.1 cannot be used in practical network systems, as it cannot handle packet loss. In this sense, Rdt3.0 is always better.
+
+10- Error correction code is always prefered to error detection code.
+
+
+ANSWER
+1- Suppose that the last SampleRTT in a TCP connection is equal to 1 sec. Then Timeout for the connection will necessarily be set to a value >= 1 sec.
+False. As SampleRTT = \alpha *estimatedRTT + (1-\alpha)*newly-collectedRTT, in this case, newly-collectedRTT is equal to 1 sec, however, if the \alpha is high enough and estimatedRTT is below 1 sec, the sampleRTT could be below 1 sec.
+
+2- Except for packet loss, network congestion can also cause the timer time-out.
+True. If there is network congestion, the packet travel time could be high to make the timer time-out.
+
+3- The timer is used to detect packet loss. Duplicate acks can be caused by setting the timer too long.
+True. If the timer is too long, as long as a pakcet is lost, the senders may be sending packages to the receiver continously until timeout, thus duplicate acks could be caused.
+
+4- Sequence number space is the bigger the better.
+False. If the sequence number space increases, the header length will increase to bring transport layer more loading.
+
+5- Suppose that host A wants to send data over TCP to host B, and host B wants to send data to host A over TCP. Two separate TCP connections - one for each direction - are needed.
+False. TCP is full-duplex.
+
+6- TCP will crowd out UDP when congestion occurs.
+Fasle. TCP has congestion control, thus UDP will crowd out TCP when congestion occurs.
+
+7- Fair sharing network bandwidth reduces average TCP flow completion time.
+False. TCP fair sharing decreases the transmission rate, and decrease the rate of packet loss, thus, the TCP flow completion time should be higher when TCP fair sharing is enabled.
+
+8- Using sequence numbers can help handle duplicated acks in rdt2.1.
+True. In rdt1.0, reliable data transfer is assumed, in rdt2.0,2.1,2.2, data error is assumed, thus in rdt 2.0, ACK and NCK is introduced, and in rdt2.1, we consider that ACK and NCK will be lost, then we use a sequence number to show that the what the packet is. In rdt2.2, NCK is discard. In rdt3.0, we consider that packets will be lost, thus timeout is considered.
+
+9- Rdt2.1 cannot be used in practical network systems, as it cannot handle packet loss. In this sense, Rdt3.0 is always better.
+False. rdt3.0 is not always better, as the channel may have dealed with the packet loss problem. And the performance of rdt3.0 is bad.
+
+10- Error correction code is always prefered to error detection code.
+False. In the situation that error occurs randomly and the ocurr-requency is low, error detection code and retransmission is better than error correction.
