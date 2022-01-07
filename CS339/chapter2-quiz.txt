@@ -1,0 +1,52 @@
+1-Consider an HTTP Web server using persistent connections. Suppose the server spawns a separate process for each client that connects to the server. Then each of these spawned processes will have different server port numbers.
+
+2- Applications using UDP service are always unreliable.
+
+3- Since HTTP is stateless, it cannot offer personalized services for different users.
+
+4- FTP is out of band, as it uses separate channels to send control and data messages.
+
+5- Email uses push protocols.
+
+6- Unlike UDP, TCP can provide a throughput guarantee.
+
+7- DNS can offer load balancing service.
+
+8- HTTP always runs on top of TCP.
+
+9- In the client-server model, if a server fails, its clients should always be notified.
+
+10- On the same server, two sockets can bind to the same port.
+
+
+Answer
+1-Consider an HTTP Web server using persistent connections. Suppose the server spawns a separate process for each client that connects to the server. Then each of these spawned processes will have different server port numbers.
+False. The HTTP is fixed in port 80 at the server.
+
+2- Applications using UDP service are always unreliable.
+False, although UDP is an unreliable transport protocol, the appilication achieved above it could make the transmission reliable by other measurements.
+
+3- Since HTTP is stateless, it cannot offer personalized services for different users.
+False. HTTP is stateless, however, there is crookie to ensure individual information be stored while web connections.
+
+4- FTP is out of band, as it uses separate channels to send control and data messages.
+True. FTP uses two different TCP connections to make control connection and data connection.
+
+5- Email uses push protocols.
+False. Email uses pull protocols, in which the clients send request first and wait for servers to answer.
+
+6- Unlike UDP, TCP can provide a throughput guarantee.
+False. Both UDP and TCP cannot provide with a throughput guarantee. Their difference lies in that TCP offers without data loss.
+
+7- DNS can offer load balancing service.
+True. DNS has a local domain name server to cache domain information, thus balance is loaded for root DNS, TLD, and Zones and Authoritative DNS.
+
+8- HTTP always runs on top of TCP.
+False. For example in HTTP3.0, it could run on top of UDP.
+
+9- In the client-server model, if a server fails, its clients should always be notified.
+False. If a client is not on, it should not be notified. On the other hand, if the number of clients is too large, it'll be costly for server to notify the clients.
+
+10- On the same server, two sockets can bind to the same port.
+False. A port can only be binded with one socket.
+
