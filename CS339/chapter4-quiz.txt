@@ -1,0 +1,76 @@
+1- Internet uses packet switching for the routers to store and forward the packets. The router's buffer is usually designed big enough to store the incoming packets, but when network congestion happens, the buffer can be full and the packets can be dropped and lost.
+
+2- NAT uses port number to multiplex IP address, therefore violates the independence layering principle.
+
+3- OSPF uses LSR and Hierarchical Routing to find the least-cost path, whereas BGP uses DVR, together with local policies, to find a good path instead of best path, with explicit AS path to avoid count-to-infinity problem.
+
+4- For an IP address, routers in different level can have different masks for it. E.g., the IP prefix 59.78.0.0/16 is divided into 8 subnets, and then the subnet 59.78.32.0/19 is further divided into 4 subnets. The entries of hierarchical routing table for the IP address 59.78.46.80 are: 59.78.0.0/16, 59.78.32.0/19, 59.78.40.0/21.
+
+5- IPv6 is more efficient than IPv4 because IPv6 header is smaller than IPv4 header.
+
+6- IP service is simple and unreliable, complicated features are implemented in the end hosts. This conforms to the End-to-End Principle.
+
+7- CIDR is designed to deal with the shortage of IPv4 addresses, whereas VLSM is designed to solve the problem of routing table explosion.
+
+8- Most routers in Internet support broadcast/multicast routing.
+
+9- LSR advertise smaller LS messages, so it is better than DVR for large network.
+
+10- LSR collects global topology information whereas DVR only collects local information, so LSR has no convergence problem.
+
+11- Within block of IP addresses 202.120.50.0~202.120.63.255, 202.120.50.0~202.120.53.0 could be assigned to a company in need of 1020 IP addresses.
+
+12- Intra-AS and inter-AS routing algorithms have different routing policies.
+
+13- CIDR could be used for any contiguous IP network to aggregate route entries.
+
+14- Internet uses Hierarchical Routing to save routing table size and reduce update traffic.
+
+15- Tracert uses ICMP to get "TTL expired" error-reporting message from each hop to extract their IP addresses and evaluate the RTT.
+
+ANSWER
+1- Internet uses packet switching for the routers to store and forward the packets. The router's buffer is usually designed big enough to store the incoming packets, but when network congestion happens, the buffer can be full and the packets can be dropped and lost.
+True.
+
+2- NAT uses port number to multiplex IP address, therefore violates the independence layering principle.
+True.
+
+3- OSPF uses LSR and Hierarchical Routing to find the least-cost path, whereas BGP uses DVR, together with local policies, to find a good path instead of best path, with explicit AS path to avoid count-to-infinity problem.
+True.
+
+4- For an IP address, routers in different level can have different masks for it. E.g., the IP prefix 59.78.0.0/16 is divided into 8 subnets, and then the subnet 59.78.32.0/19 is further divided into 4 subnets. The entries of hierarchical routing table for the IP address 59.78.46.80 are: 59.78.0.0/16, 59.78.32.0/19, 59.78.40.0/21.
+True.
+
+5- IPv6 is more efficient than IPv4 because IPv6 header is smaller than IPv4 header.
+False.
+The header of IPv6 is 40 bytes long, and 20 bytes for IPv4 without optional parts. The reason why IPv6 is faster than IPv4 is that IPv6 remove the grouping and reassembling from the router to end system.
+
+6- IP service is simple and unreliable, complicated features are implemented in the end hosts. This conforms to the End-to-End Principle.
+True.
+
+7- CIDR is designed to deal with the shortage of IPv4 addresses, whereas VLSM is designed to solve the problem of routing table explosion.
+False. CIDR and VLSM could both solve the problem of routing table explosion, and VLSM could save the IP space.
+
+8- Most routers in Internet support broadcast/multicast routing.
+False. For multicast routing, only D-class IP will use it, which contain only little of IPs.
+
+9- LSR advertise smaller LS messages, so it is better than DVR for large network.
+False. The broadcasting and computation cost is relatively higher than DVR.
+
+10- LSR collects global topology information whereas DVR only collects local information, so LSR has no convergence problem.
+False. LSR has convergence problem when the network topology is large enough.
+
+12- Intra-AS and inter-AS routing algorithms have different routing policies.
+True. In the Internet, intra-AS uses OSPF and inter-AS uses BGP.
+
+11- Within block of IP addresses 202.120.50.0~202.120.63.255, 202.120.50.0~202.120.53.0 could be assigned to a company in need of 1020 IP addresses.
+False. There will be a hole in the IP addresses.
+
+13- CIDR could be used for any contiguous IP network to aggregate route entries.
+False. Mention there is a 'black hole' problem existed, just like T11.
+
+14- Internet uses Hierarchical Routing to save routing table size and reduce update traffic.
+True.
+
+15- Tracert uses ICMP to get "TTL expired" error-reporting message from each hop to extract their IP addresses and evaluate the RTT.
+True.
