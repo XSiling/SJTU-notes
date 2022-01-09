@@ -1,0 +1,51 @@
+1- If we can guarantee reliable data transfer at the link layer, then the end-to-end reliability can be also guaranteed.
+
+2- Suppose the following bit string is received by the data link layer from the network layer: 01110111101111101111110. Then the resulting string after bit stuffing is 0111011110111110011111010.
+
+3- Since CSMA performs carrier sensing before data transfer, the possibility of packet collision becomes smaller. That is why CSMA attains higher throughout than ALOHA.
+
+4- A full-duplex point-to-point ethernet link does not require CSMA/CD.
+
+5- Given two hosts A and B. A's IP is 111.111.111.111/24, and B's IP is 222.222.222.222/24. Suppose that A's ARP table is empty at the beginning. If A wants to talk to B, A needs to generate an ARP request first to acquire B's MAC address.
+
+6- Compared with a hub, a switch can reduce a LAN's collision region.
+
+7- If we divide a switch into two VLANs, then the two VLANs need to connect to a router in order to communicate.
+
+8- L2 switches are plug and play, using self-learning to construct switch tables. In contrast, L3 switches require manual configuration.
+
+9- We should avoid building network topologies with cycles, because of the ARP storm.
+
+10- The MAC layer is always implemented in NIC, while the transport layer is always implemented in software.
+
+ANSWER
+1- If we can guarantee reliable data transfer at the link layer, then the end-to-end reliability can be also guaranteed.
+False. The end-to-end reliability is associated with other layers such as network layer, transport layer and so one. For example, if an end-to-end system uses UDP, even though link layer is reliable, we cannot promise the end-to-end reliability.
+
+2- Suppose the following bit string is received by the data link layer from the network layer: 01110111101111101111110. Then the resulting string after bit stuffing is 0111011110111110011111010.
+True. Bit stuffing requires add one 0 after 5 continuous 0's.
+
+3- Since CSMA performs carrier sensing before data transfer, the possibility of packet collision becomes smaller. That is why CSMA attains higher throughout than ALOHA.
+True.
+
+4- A full-duplex point-to-point ethernet link does not require CSMA/CD.
+True. For this situation, there will be no collision.
+
+5- Given two hosts A and B. A's IP is 111.111.111.111/24, and B's IP is 222.222.222.222/24. Suppose that A's ARP table is empty at the beginning. If A wants to talk to B, A needs to generate an ARP request first to acquire B's MAC address.
+False. They are not in the same subnet, A need to acquire the mid router's MAC address first.
+
+6- Compared with a hub, a switch can reduce a LAN's collision region.
+True.
+
+7- If we divide a switch into two VLANs, then the two VLANs need to connect to a router in order to communicate.
+True.
+
+8- L2 switches are plug and play, using self-learning to construct switch tables. In contrast, L3 switches require manual configuration.
+True.
+
+9- We should avoid building network topologies with cycles, because of the ARP storm.
+False. Although there is ARP storm, it could be reduced by network layer. And network topologies with cycles have many benefits.
+
+10- The MAC layer is always implemented in NIC, while the transport layer is always implemented in software.
+False. The transport layer could be implemented in hardware also.
+
