@@ -1,0 +1,25 @@
+1- The mac and physical layer characteristics of a wireless network should not affect the design of transport layer and application layer protocols.
+
+2- Different modulation schemes give different throughput. For example, the throughput of QAM16 is 4 times the throughput of BPSK. Hence, we should always prefer QAM16 to BPSK in wireless communication.
+
+3- The exposed terminal problem could reduce the wireless network throughput.
+
+4- The RTS-CTS scheme allows senders to reserve channels and avoid collisions of data frames. Hence, enabling RTS-CTS will improve network throughput.
+
+5- When a mobile node moves to a foreign network, one addressing approach is to let the foreign network advertise to all other networks that the mobile node is resident in its network. Compared to this approach, the IP-in-IP tunneling approach is easier to support millions of mobile nodes.
+
+ANSWER
+1- The mac and physical layer characteristics of a wireless network should not affect the design of transport layer and application layer protocols.
+True. Due to the independece principle of each layer, the characteristics change of lower layer should not affect higher layer.
+
+2- Different modulation schemes give different throughput. For example, the throughput of QAM16 is 4 times the throughput of BPSK. Hence, we should always prefer QAM16 to BPSK in wireless communication.
+False. The throughput of QAM16 is 4 times the throughput of BPSK. However, in the same SNR, QAM16 has higher BER than BPSK. If the BER is too high, we should consider changing to BPSK.
+
+3- The exposed terminal problem could reduce the wireless network throughput.
+True.
+
+4- The RTS-CTS scheme allows senders to reserve channels and avoid collisions of data frames. Hence, enabling RTS-CTS will improve network throughput.
+False. RTS-CTS requires sending a small packet first which decreases the network throughput.
+
+5- When a mobile node moves to a foreign network, one addressing approach is to let the foreign network advertise to all other networks that the mobile node is resident in its network. Compared to this approach, the IP-in-IP tunneling approach is easier to support millions of mobile nodes.
+True.
